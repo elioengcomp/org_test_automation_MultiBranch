@@ -1,0 +1,13 @@
+
+pipelines:
+  - name: P_SYC_Pipelines_6555_001
+    configuration:
+          environmentVariables:
+            readOnly:
+              WORLD: "world"
+    steps:
+      - name: P_SYC_Pipelines_6555_001_01
+        type: Bash
+        execution:
+          onExecute:
+            - echo "hello ${WORLD}"
