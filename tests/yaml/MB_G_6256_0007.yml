@@ -1,0 +1,17 @@
+resources:
+  - name: MB_G_6256_0007_resource
+    type: PropertyBag
+    configuration:
+      creatingBranch: {{gitBranch}}
+
+pipelines:
+  - name: pipeline_MB_G_6256_0007
+    steps:
+      - name: MB_G_6256_0007_step
+        type: Bash
+        configuration:
+          inputResources:
+            - name: MB_G_6256_0007_resource
+        execution:
+          onExecute:
+            - echo $res_MB_G_6256_0007_resource_creatingBranch
